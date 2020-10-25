@@ -58,6 +58,7 @@ body{
     &__list > .nav__item-drop:hover >.nav__list-drop{
         visibility: visible;
         transform: translateY(0);
+        opacity: 1;
     }
     &__list{
         display: flex;
