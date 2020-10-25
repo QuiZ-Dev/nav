@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #fff url(../../../build/css/img/alpaca.png) no-repeat ;
+    background-size: cover;
+}
+
+
+.center{
+    max-width: 1196px;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: #131417;
+    padding: 17px 0;
+
+    &__center{
+        display: flex;
+        align-items: center;
+    }
+    &__logo{
+        display: flex;
+        margin-right: 158px;
+        width: 46px;
+        height: 46px;
+        border: 4px solid #2D9CDB;
+        border-radius: 50%;
+        font: bold 18px/24px "Roboto";
+        color: $font-color;
+        align-items: center;
+        justify-content: center;
+    }
+    &__phone{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    
+}
+
+
+.nav{
+    &__list-drop{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        padding-left: 20px;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-5px);
+    }
+    &__list > .nav__item:hover > .nav__link-drop > .nav__list-drop{
+        visibility: visible;
+        transform: translateY(0);
+    }
+    &__list{
+        display: flex;
+        list-style-type: none;
+    }
+    &__item{
+        margin-left: 40px;
+    }
+    &__link{
+        display: block;
+        text-decoration: none;
+        color: $font-color;
+        padding: 8px 18px;
+        font: $basic-font;
+    }
+    &__link-drop{
+        position: relative;
+    }
+    &__link:hover{
+        color: $font-active;
+    }
+    &__list-second{
+        position: absolute;
+        background-color: $main-color;
+        width: 320px;
+        list-style-type: none;
+    }
+    &__list-second:first-child{
+        border-radius: 8px 8px 0 0;
+    }
+    &__list-second:last-child{
+        border-radius: 0 0 8px 8px;
+    }
+    
+}
+
+.nav__item-second>.nav__link{
+    font: 400 16px/24px "Roboto";
+}
+
+.phone{
+    &__icon{
+        height: 18px;
+        width: 18px;
+        margin-right: 13px;
+    }
+    &__link{
+        color: $font-color;
+        font: $basic-font;
+        text-decoration: none;
+    }
+    &__link:hover{
+        text-decoration: underline;
+        color: $font-active;
+    }
+    
+}
+
