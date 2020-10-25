@@ -56,7 +56,7 @@ body{
         visibility: hidden;
         transform: translateY(-5px);
     }
-    &__list > .nav__item:hover > .nav__link-drop > .nav__list-drop{
+    &__list > .nav__item-drop:hover > .nav__link > .nav__list-drop{
         visibility: visible;
         transform: translateY(0);
     }
@@ -67,6 +67,9 @@ body{
     &__item{
         margin-left: 40px;
     }
+    &__item-drop{
+        position: relative;
+    }
     &__link{
         display: block;
         text-decoration: none;
@@ -74,14 +77,11 @@ body{
         padding: 8px 18px;
         font: $basic-font;
     }
-    &__link-drop{
-        position: relative;
-    }
     &__link:hover{
         color: $font-active;
     }
     &__list-second{
-        position: absolute;
+        // position: absolute;
         background-color: $main-color;
         width: 320px;
         list-style-type: none;
