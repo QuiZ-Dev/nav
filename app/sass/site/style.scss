@@ -1,30 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
-    background: #fff url(../../../build/css/img/alpaca.png) no-repeat ;
+    background: #fff url(../../../build/css/img/alpaca.png) no-repeat;
     background-size: cover;
 }
 
 
-.center{
+.center {
     max-width: 1196px;
     margin: 0 auto;
 }
 
-.header{
+.header {
     background-color: #131417;
     padding: 17px 0;
 
-    &__center{
+    &__center {
         display: flex;
         align-items: center;
     }
-    &__logo{
+
+    &__logo {
         display: flex;
         margin-right: 158px;
         width: 46px;
@@ -36,83 +37,169 @@ body{
         align-items: center;
         justify-content: center;
     }
-    &__phone{
+
+    &__phone {
         margin-left: auto;
         display: flex;
         align-items: center;
     }
-    
+
 }
 
 
-.nav{
-    &__list-drop{
+.nav {
+    &__list-drop {
         position: absolute;
         top: 100%;
-        padding-left: 20px;
         transition: opacity 0.2s ease, transform 0.2s ease;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-5px);
     }
-    &__list > .nav__item-drop:hover >.nav__list-drop{
+
+    &__list>.nav__item-drop:hover>.nav__list-drop {
         visibility: visible;
         transform: translateY(0);
         opacity: 1;
     }
-    &__list{
+
+    &__list {
         display: flex;
         list-style-type: none;
     }
-    &__item{
+
+    &__item {
         margin-left: 40px;
     }
-    &__item-drop{
+
+    &__item-drop {
         position: relative;
+        padding-right: 5px;
     }
-    &__link{
+
+    &__link {
         display: block;
         text-decoration: none;
         color: $font-color;
         padding: 8px 18px;
         font: $basic-font;
     }
-    &__link:hover{
+
+    &__link:hover {
         color: $font-active;
     }
-    &__list-second{
+
+    &__list-second {
         background-color: $main-color;
         width: 320px;
         list-style-type: none;
+        margin-top: 20px;
     }
-    &__list-second:first-child{
+
+    &__list-second:first-child {
         border-radius: 8px 8px 0 0;
     }
-    &__list-second:last-child{
+
+    &__list-second:last-child {
         border-radius: 0 0 8px 8px;
     }
-    
+    &__list-third {
+        background-color: $main-color;
+        width: 210px;
+        list-style-type: none;
+        padding: 8px 12px;
+    }
+    &__list-third:after{
+        content: " ";
+        border: 8px solid transparent;
+        border-left: none;
+        border-right-color: #000;
+        position: absolute;
+        top: 12px;
+        left: -8px;
+    }
+    &__list-third:first-child {
+        border-radius: 8px 8px 0 0;
+    }
+
+    &__list-third:last-child {
+        border-radius: 0 0 8px 8px;
+    }
+    &__item-second-drop{
+        position: relative;
+    }
+
+    &__list-drop-third {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        padding-left: 20px;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-5px);
+    }
+
+    &__item-second-drop:hover> .nav__list-drop-third {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    &__item-second-drop:after{
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        margin-top: -3px;
+        border: 6px solid transparent;
+        border-top: 6px solid #f2994a;
+        border-bottom: none;
+        transition: transform 0.2s ease-in;
+    }
+    &__item-second-drop:hover:after{
+        transform: rotate(180deg);
+    }
+    &__list>.nav__item-drop:after{
+        content: " ";
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        
+        margin-top: -3px;
+        border: 6px solid transparent;
+        border-top: 6px solid #f2994a;
+        border-bottom: none;
+        transition: transform 0.2s ease-in;
+    }
+    &__list>.nav__item-drop:hover:after{
+        transform: rotate(180deg);
+    }
+
 }
 
-.nav__item-second>.nav__link{
+.nav__item-second>.nav__link {
+    font: 400 16px/24px "Roboto";
+}
+.nav__item-third>.nav__link {
     font: 400 16px/24px "Roboto";
 }
 
-.phone{
-    &__icon{
+.phone {
+    &__icon {
         height: 18px;
         width: 18px;
         margin-right: 13px;
     }
-    &__link{
+
+    &__link {
         color: $font-color;
         font: $basic-font;
         text-decoration: none;
     }
-    &__link:hover{
+
+    &__link:hover {
         text-decoration: underline;
         color: $font-active;
     }
-    
-}
 
+}
