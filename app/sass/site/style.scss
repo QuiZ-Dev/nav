@@ -19,10 +19,12 @@ body {
 .header {
     background-color: #131417;
     padding: 17px 0;
+    
 
     &__center {
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     &__logo {
@@ -157,7 +159,7 @@ body {
         transition: transform 0.2s ease-in;
     }
     &__item-second-drop:hover:after{
-        transform: rotate(180deg);
+        transform: rotate(-90deg);
     }
     &__list>.nav__item-drop:after{
         content: " ";
@@ -176,6 +178,15 @@ body {
     }
 
 }
+.nav__list-third:after {
+    content: " ";
+    border: 8px solid transparent;
+    border-left: none;
+    border-right-color: #000;
+    position: absolute;
+    top: 12px;
+    left: -8px;
+  }
 
 .nav__item-second>.nav__link {
     font: 400 16px/24px "Roboto";
@@ -200,6 +211,39 @@ body {
     &__link:hover {
         text-decoration: underline;
         color: $font-active;
+    }
+
+}
+.burger{
+    display: none;
+    right: 0;
+    cursor: pointer;
+    
+    
+    &__menu{
+        margin: 8px;
+        width: 30px;
+        height: 18px;
+    }
+}
+
+@media(max-width:1100px){
+    .burger{
+        display: block;
+        margin-right: 22px;
+    }
+    nav{
+        display: none;
+    }
+    .header__center{
+        justify-content: space-between;
+    }
+    .header__phone{
+        margin-left: 0;
+    }
+    .header__logo{
+        margin-right: 0;
+        margin-left: 22px;
     }
 
 }

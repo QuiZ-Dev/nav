@@ -13,7 +13,13 @@
             4.57C6.18 4.92 6.1 5.31 5.82 5.59L3.62 7.79Z" fill="#5BC12C" />
         </symbol>
 
+        <symbol id="burger" viewBox="0 0 22 14">           
+            <path d="M0 1H22M0 7H22M0 13H22" stroke="#F2994A" stroke-width="2"/>        
+        </symbol>
+
     </svg>
+
+    
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="build/css/main.css">
@@ -28,7 +34,7 @@
                     <li class="nav__item">
                         <a href="#" class="nav__link">Главная</a>
                     </li>
-                    <li class="nav__item nav__item-drop">
+                    <li class="nav__item nav__item-drop ">
                         <a href="#" class="nav__link">Основное меню</a>
                         <div class="nav__list-drop">
                             <ul class="nav__list-second">
@@ -41,7 +47,7 @@
                                 <li class="nav__item-second">
                                     <a href="#" class="nav__link">Хочу работать у вас</a>
                                 </li>
-                                <li class="nav__item-second nav__item-second-drop ">
+                                <li class="nav__item-second nav__item-second-drop nav__item-arrow">
                                     <a href="#" class="nav__link">Есть предложение по работе с клиентом</a>
                                     <div class="nav__list-drop-third">
                                         <ul class="nav__list-third">
@@ -70,6 +76,12 @@
                     <use xlink:href="#phone"></use>
                 </svg>
                 <a href="tel:+1(321)2223333" class="phone__link">+1 (321) 222 - 33 -33</a>
+            </div>
+
+            <div class="burger js-burger">
+                <svg class="burger__menu">
+                    <use xlink:href="#burger"></use>
+                </svg>
             </div>
         </div>
     </header>
