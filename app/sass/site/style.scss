@@ -10,6 +10,9 @@ body {
     background-size: cover;
 }
 
+ul,ol{
+    list-style-type: none;
+}
 
 .center {
     max-width: 1196px;
@@ -57,12 +60,14 @@ body {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-5px);
+        display: none;
     }
 
     &__list>.nav__item-drop:hover>.nav__list-drop {
         visibility: visible;
         transform: translateY(0);
         opacity: 1;
+        display: block;
     }
 
     &__list {
@@ -82,22 +87,34 @@ body {
     &__link {
         display: block;
         text-decoration: none;
+        position: relative;
         color: $font-color;
         padding: 8px 18px;
         font: $basic-font;
+        transition: background-color .2s ease, color .2s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__link:hover {
         color: $font-active;
+
+    }
+    &__list-drop .nav__link:hover{
+        background-color: $main-color;
     }
 
     &__list-second {
-        background-color: $main-color;
+        background-color: #252830;
         width: 320px;
         list-style-type: none;
         margin-top: 20px;
     }
-
+    &__item-second {
+        position: relative;
+    }
+    
     &__list-second:first-child {
         border-radius: 8px 8px 0 0;
     }
@@ -105,88 +122,53 @@ body {
     &__list-second:last-child {
         border-radius: 0 0 8px 8px;
     }
-    &__list-third {
-        background-color: $main-color;
-        width: 210px;
-        list-style-type: none;
-        padding: 8px 12px;
-    }
-    &__list-third:after{
-        content: " ";
-        border: 8px solid transparent;
-        border-left: none;
-        border-right-color: #000;
-        position: absolute;
-        top: 12px;
-        left: -8px;
-    }
-    &__list-third:first-child {
-        border-radius: 8px 8px 0 0;
+    &__item-second .nav__list-drop{
+        position: absolute;        
+        left: 100%;
+        top: 0;
+        padding-left: 22px;
+        display: none;
+    }  
+    &__item-second .nav__list-second{
+        display: inline-block;
+        width: auto;
     }
 
-    &__list-third:last-child {
-        border-radius: 0 0 8px 8px;
-    }
+    &__item-second:hover .nav__list-drop{
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    } 
     &__item-second-drop{
         position: relative;
     }
 
-    &__list-drop-third {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        padding-left: 20px;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-5px);
-    }
 
-    &__item-second-drop:hover> .nav__list-drop-third {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 1;
-    }
-    &__item-second-drop:after{
+    &__link--drop:after{
         content: " ";
         position: absolute;
         top: 50%;
-        right: 8px;
-        margin-top: -3px;
-        border: 6px solid transparent;
+        right: 3px;
+        margin-top: -1px;     
+        border-right: 3px solid transparent;
+        border-left: 3px solid transparent;
         border-top: 6px solid #f2994a;
         border-bottom: none;
         transition: transform 0.2s ease-in;
     }
-    &__item-second-drop:hover:after{
+    &__link--drop:hover:after{
+        transform: rotate(180deg);
+    }
+   
+    &__link--drop-rotate:hover:after{
         transform: rotate(-90deg);
     }
-    &__list>.nav__item-drop:after{
-        content: " ";
-        position: absolute;
-        top: 50%;
-        right: 5px;
-        
-        margin-top: -3px;
-        border: 6px solid transparent;
-        border-top: 6px solid #f2994a;
-        border-bottom: none;
-        transition: transform 0.2s ease-in;
-    }
-    &__list>.nav__item-drop:hover:after{
-        transform: rotate(180deg);
+    &__link--drop-inner:after{
+        right: 18px;
     }
 
 }
-.nav__list-third:after {
-    content: " ";
-    border: 8px solid transparent;
-    border-left: none;
-    border-right-color: #000;
-    position: absolute;
-    top: 12px;
-    left: -8px;
-  }
+
 
 .nav__item-second>.nav__link {
     font: 400 16px/24px "Roboto";
@@ -232,8 +214,50 @@ body {
         display: block;
         margin-right: 22px;
     }
-    nav{
-        display: none;
+    .nav{
+        position: fixed;
+        right: 0;
+        top: 80px;
+        bottom: 0;
+        overflow-y: auto;
+        z-index: 10; 
+        width: 374px;   
+        background-color: $main-color;
+        &__list{
+            display: block;
+        }    
+        &__item{
+            margin-left: 0;
+        }
+        &__item-drop{
+            padding-right: 0;
+        }
+        &__link{
+            padding: 20px;
+        }
+        &__link--drop{
+            display: flex;
+            align-items: center;
+        }
+        &__link--drop:after{
+            position: static;
+            margin-left: 8px;
+            margin-top: 0;
+        }
+        &__list-drop{
+            position: static;
+        }
+        &__list-second{
+            width: auto;
+            margin-top: 0;
+            
+        }
+        &__list-second:last-child,
+        &__list-second:first-child{
+            border-radius: 0;
+        }
+        
+
     }
     .header__center{
         justify-content: space-between;
