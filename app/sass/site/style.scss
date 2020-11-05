@@ -251,14 +251,25 @@ ul,ol{
             width: auto;
             margin-top: 0;
             
+            
         }
         &__list-second:last-child,
         &__list-second:first-child{
             border-radius: 0;
         }
+        &__link--drop-rotate:hover:after{
+            transform: rotate(180deg);
+        }
         
 
     }
+    
+    .nav__item-second>.nav__list-drop{
+        position: static;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
     .header__center{
         justify-content: space-between;
     }
@@ -270,4 +281,22 @@ ul,ol{
         margin-left: 22px;
     }
 
+}
+
+@media(max-width:500px){
+    .header__center{
+        justify-content: flex-start;
+    }
+    .nav{
+        width: 100%;
+    }
+
+    .phone__link{
+        display: none;
+    }
+    .header__phone{
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    
 }
