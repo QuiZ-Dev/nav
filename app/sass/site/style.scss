@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #fff url(../../../build/css/img/alpaca.png) no-repeat;
+    background: #fff url(./../../../build/css/img/alpaca.png) no-repeat;
     background-size: cover;
 }
 
@@ -210,9 +210,17 @@ ul,ol{
 }
 
 @media(max-width:1160px){
+    .header__center{
+        justify-content: space-between;
+    }
     .burger{
         display: block;
         margin-right: 22px;
+        
+        &__menu{
+            width: 22px;
+            height: 12px;
+        }
     }
     .nav{
         position: fixed;
@@ -270,9 +278,6 @@ ul,ol{
         margin-top: 10px;
     }
 
-    .header__center{
-        justify-content: space-between;
-    }
     .header__phone{
         margin-left: 0;
     }
@@ -284,9 +289,6 @@ ul,ol{
 }
 
 @media(max-width:500px){
-    .header__center{
-        justify-content: flex-start;
-    }
     .nav{
         width: 100%;
     }
@@ -294,9 +296,13 @@ ul,ol{
     .phone__link{
         display: none;
     }
+    
     .header__phone{
         margin-left: auto;
-        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
     }
     
 }
