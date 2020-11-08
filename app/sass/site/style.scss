@@ -78,6 +78,9 @@ ul,ol{
     &__item {
         margin-left: 40px;
     }
+    &__item>.nav__list-drop{
+        padding-top: 19px;
+    }
 
     &__item-drop {
         position: relative;
@@ -109,7 +112,6 @@ ul,ol{
         background-color: #252830;
         width: 320px;
         list-style-type: none;
-        margin-top: 20px;
     }
     &__item-second {
         position: relative;
@@ -132,6 +134,7 @@ ul,ol{
     &__item-second .nav__list-second{
         display: inline-block;
         width: auto;
+        border-radius: 8px
     }
 
     &__item-second:hover .nav__list-drop{
@@ -142,8 +145,19 @@ ul,ol{
     &__item-second-drop{
         position: relative;
     }
-
-
+    &__nav-item-second>.nav__list-drop>.nav__list-second{
+        position: relative;
+    }
+    &__item-second>.nav__list-drop>.nav__list-second>.nav__item-second:first-child:after{
+        content:" ";
+        border: 14px solid transparent;
+        border-left: none;
+        border-right-color: #252830;
+        position: absolute;
+        top: 6px;
+        left: -14px;
+        
+    }
     &__link--drop:after{
         content: " ";
         position: absolute;
@@ -167,6 +181,11 @@ ul,ol{
         right: 18px;
     }
 
+}
+
+.nav._active{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 
@@ -257,9 +276,7 @@ ul,ol{
         }
         &__list-second{
             width: auto;
-            margin-top: 0;
-            
-            
+            margin-top: 0;     
         }
         &__list-second:last-child,
         &__list-second:first-child{
@@ -284,6 +301,9 @@ ul,ol{
     .header__logo{
         margin-right: 0;
         margin-left: 22px;
+    }
+    .nav__list-drop>.nav__list-second{
+        display: block;
     }
 
 }
