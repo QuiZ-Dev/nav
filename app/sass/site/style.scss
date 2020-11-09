@@ -106,6 +106,7 @@ ul,ol{
     }
     &__list-drop .nav__link:hover{
         background-color: $main-color;
+        border-radius: 8px;
     }
 
     &__list-second {
@@ -223,8 +224,8 @@ ul,ol{
     
     &__menu{
         margin: 8px;
-        width: 30px;
-        height: 18px;
+        width: 40px;
+        height: 48px;
     }
 }
 
@@ -243,13 +244,21 @@ ul,ol{
     }
     .nav{
         position: fixed;
-        right: -500px;
+        right: 0;
         top: 80px;
         bottom: 0;
         overflow-y: auto;
         z-index: 10; 
         width: 374px;   
         background-color: $main-color;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform .2s ease, opacity .2s ease;
+        &._active{
+            transform: translateX(0);
+            opacity: 1;
+            transition: transform .3s ease, opacity .3s ease;
+        }
         &__list{
             display: block;
         }    
