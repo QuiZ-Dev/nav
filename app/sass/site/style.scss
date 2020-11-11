@@ -171,11 +171,11 @@ ul,ol{
         border-bottom: none;
         transition: transform 0.2s ease-in;
     }
-    &__link--drop:hover:after{
+    &__item-drop:hover .nav__link--drop:after{
         transform: rotate(180deg);
     }
    
-    &__link--drop-rotate:hover:after{
+    &__item-second:hover .nav__link--drop-rotate:after{
         transform: rotate(-90deg);
     }
     &__link--drop-inner:after{
@@ -317,6 +317,9 @@ ul,ol{
 @media(max-width:500px){
     .nav{
         width: 100%;
+        &__item-second:hover .nav__link--drop-rotate:after{
+            transform: rotate(360deg);
+        }
     }
 
     .phone__link{
