@@ -22,7 +22,6 @@ ul,ol{
 .header {
     background-color: #131417;
     padding: 17px 0;
-    
 
     &__center {
         display: flex;
@@ -106,7 +105,6 @@ ul,ol{
     }
     &__list-drop .nav__link:hover{
         background-color: $main-color;
-        border-radius: 8px;
     }
 
     &__list-second {
@@ -117,11 +115,6 @@ ul,ol{
     &__item-second {
         position: relative;
     }
-    
-    &__list-second:first-child {
-        border-radius: 8px 8px 0 0;
-    }
-
     &__list-second:last-child {
         border-radius: 0 0 8px 8px;
     }
@@ -171,11 +164,11 @@ ul,ol{
         border-bottom: none;
         transition: transform 0.2s ease-in;
     }
-    &__item-drop:hover .nav__link--drop:after{
+    &__item-drop:hover> .nav__link--drop:after{
         transform: rotate(180deg);
     }
    
-    &__item-second:hover .nav__link--drop-rotate:after{
+    &__item-second:hover>  .nav__link--drop-rotate:after{
         transform: rotate(-90deg);
     }
     &__link--drop-inner:after{
@@ -188,8 +181,6 @@ ul,ol{
     transform: translateX(0);
     opacity: 1;
 }
-
-
 .nav__item-second>.nav__link {
     font: 400 18px/24px "Roboto";
 }
@@ -216,9 +207,7 @@ ul,ol{
 .burger{
     display: none;
     right: 0;
-    cursor: pointer;
-    
-    
+    cursor: pointer;   
     &__menu{
         margin: 8px;
         width: 40px;
@@ -251,6 +240,9 @@ ul,ol{
         transform: translateX(100%);
         opacity: 0;
         transition: transform .2s ease, opacity .2s ease;
+        &__item-second:hover .nav__link--drop-rotate:after{
+            transform: rotate(180deg);
+        }
         &._active{
             transform: translateX(0);
             opacity: 1;
@@ -258,7 +250,7 @@ ul,ol{
         }
         &__list{
             display: block;
-        }    
+        }      
         &__item{
             margin-left: 0;
         }
@@ -291,14 +283,11 @@ ul,ol{
         &__link--drop-rotate:hover:after{
             transform: rotate(180deg);
         }
-        
-
     }
     
     .nav__item-second>.nav__list-drop{
         position: static;
         padding-left: 0;
-        margin-top: 10px;
     }
 
     .header__phone{
@@ -311,15 +300,15 @@ ul,ol{
     .nav__list-drop>.nav__list-second{
         display: block;
     }
+    .nav__item>.nav__list-drop {
+        padding-top: 0;
+    }
 
 }
 
 @media(max-width:500px){
     .nav{
-        width: 100%;
-        &__item-second:hover .nav__link--drop-rotate:after{
-            transform: rotate(360deg);
-        }
+        width: 100%;        
     }
 
     .phone__link{
