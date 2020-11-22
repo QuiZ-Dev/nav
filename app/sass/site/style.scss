@@ -6,8 +6,9 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #fff url(./../../../build/css/img/alpaca.png) no-repeat;
     background-size: cover;
+    background: #fff url(./../../../build/css/img/alpaca.png) no-repeat;
+    
 }
 
 ul,ol{
@@ -22,6 +23,7 @@ ul,ol{
 .header {
     background-color: #131417;
     padding: 17px 0;
+
 
     &__center {
         display: flex;
@@ -177,6 +179,13 @@ ul,ol{
 
 }
 
+.nav__item-second:first-of-type .nav__link{
+    border-radius: 8px 8px 0 0;
+}
+.nav__item-second:last-of-type .nav__link{
+    border-radius: 0 0 8px 8px;
+}
+
 .nav._active{
     transform: translateX(0);
     opacity: 1;
@@ -216,6 +225,17 @@ ul,ol{
 }
 
 @media(max-width:1160px){
+    body{
+        &._active{
+            background-color:rgba(0,0,0,.3);
+            height:100%;
+            position:fixed;
+            width:100%;
+            top:0;
+            left:0;   
+            z-index: 100;     
+        }
+    }
     .header__center{
         justify-content: space-between;
     }
@@ -247,6 +267,8 @@ ul,ol{
             transform: translateX(0);
             opacity: 1;
             transition: transform .3s ease, opacity .3s ease;
+            
+
         }
         &__list{
             display: block;
@@ -259,6 +281,7 @@ ul,ol{
         }
         &__link{
             padding: 20px;
+            white-space: normal;
         }
         &__link--drop{
             display: flex;
@@ -271,6 +294,7 @@ ul,ol{
         }
         &__list-drop{
             position: static;
+            transform: translateY(0);
         }
         &__list-second{
             width: auto;
@@ -302,6 +326,12 @@ ul,ol{
     }
     .nav__item>.nav__list-drop {
         padding-top: 0;
+    }
+    .nav__item-second:first-of-type .nav__link{
+        border-radius: 0;
+    }
+    .nav__item-second:last-of-type .nav__link{
+        border-radius: 0;
     }
 
 }
